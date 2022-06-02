@@ -4,7 +4,8 @@ import { Card } from "react-bootstrap";
 
 export default class RandomUserAPI extends Component{
     state={
-        status: []
+        status: [],
+        error: []
     }
 
     componentDidMount(){
@@ -12,6 +13,11 @@ export default class RandomUserAPI extends Component{
             .then(res => {
                 this.setState({
                     status: res.status
+                })
+            })
+            .catch(err => {
+                this.setState({
+                    error: err
                 })
             });
     }
@@ -24,7 +30,7 @@ export default class RandomUserAPI extends Component{
                     <Card.Title>Random User API</Card.Title>
                     <Card.Subtitle className="mb-2 text-light fst-italic">https://api.randomuser.me/?nat=US&results=5</Card.Subtitle>
                     <Card.Text>
-                        Status: {this.state.status}
+                        Status: {status ? this.state.status : this.state.error}
                     </Card.Text>
                 </Card.Body>
             </Card>
