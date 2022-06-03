@@ -2,7 +2,7 @@ import axios from "axios";
 import { Component } from "react";
 import { Card } from "react-bootstrap";
 
-export default class RandomUserAPI extends Component{
+export default class SimpleBookAPI extends Component{
     state={
         status: [],
         error: []
@@ -11,8 +11,7 @@ export default class RandomUserAPI extends Component{
     componentDidMount(){
         axios({
             method: 'get',
-            url: "https://api.randomuser.me/",
-            params: {nat: 'US', results: '5'}
+            url: "https://simple-books-api.glitch.me",
         })
         .then(res => {
             this.setState({
@@ -32,8 +31,8 @@ export default class RandomUserAPI extends Component{
         return(
             <Card style={{ width: '18rem' }} bg={status.length === 0 ? "danger" : "success"} text="light">
                 <Card.Body>
-                    <Card.Title>Random User API</Card.Title>
-                    <Card.Subtitle className="mb-2 text-light fst-italic">https://api.randomuser.me/?nat=US&results=5</Card.Subtitle>
+                    <Card.Title>Simple Book API</Card.Title>
+                    <Card.Subtitle className="mb-2 text-light fst-italic">https://simple-books-api.glitch.me</Card.Subtitle>
                     <Card.Text>
                         Status: {status.length === 0 ? this.state.error : this.state.status}
                     </Card.Text>
