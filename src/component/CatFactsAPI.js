@@ -3,9 +3,13 @@ import { Component } from "react";
 import { Card } from "react-bootstrap";
 
 export default class CatFactsAPI extends Component{
-    state={
-        status: [],
-        error: []
+    constructor(props){
+        super(props);
+        
+        this.state={
+            status: [],
+            error: []
+        }
     }
 
     componentDidMount(){
@@ -15,7 +19,7 @@ export default class CatFactsAPI extends Component{
         })
         .then(res => {
             this.setState({
-                status: res.status
+                status: res.status 
             })
             console.log(res);
         })

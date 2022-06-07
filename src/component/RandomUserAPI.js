@@ -3,9 +3,14 @@ import { Component } from "react";
 import { Card } from "react-bootstrap";
 
 export default class RandomUserAPI extends Component{
-    state={
-        status: [],
-        error: []
+    constructor(props){
+        super(props);
+        
+        this.state={
+            status: [],
+            error: []
+        }
+
     }
 
     componentDidMount(){

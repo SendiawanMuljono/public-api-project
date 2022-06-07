@@ -17,7 +17,7 @@ class App extends Component {
         <Container>
   
           <div className='d-flex justify-content-center'>
-            <Button style={{ background: "DarkBlue" }} className='fw-bold text-light'>Refresh APIs</Button>
+            <Button onClick={() => window.location.reload()} style={{ background: "DarkBlue" }} className='fw-bold text-light'>Refresh APIs</Button>
           </div>
           
           <Row sm={2} md={3}>
