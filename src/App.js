@@ -2,6 +2,9 @@ import { Component } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import RandomUserAPI from './component/RandomUserAPI';
 import SimpleBookAPI from './component/SimpleBookAPI';
+import CatFactsAPI from './component/CatFactsAPI';
+import JsonPostsAPI from './component/JsonPostsAPI';
+import WeatherAPI from './component/WeatherAPI';
 
 class App extends Component {
   render(){
@@ -25,16 +28,13 @@ class App extends Component {
               <SimpleBookAPI/>
             </Col>
             <Col className='d-flex justify-content-center p-2'>
-              <RandomUserAPI/>
+              <CatFactsAPI/>
             </Col>
             <Col className='d-flex justify-content-center p-2'>
-              <RandomUserAPI/>
+              <JsonPostsAPI/>
             </Col>
             <Col className='d-flex justify-content-center p-2'>
-              <RandomUserAPI/>
-            </Col>
-            <Col className='d-flex justify-content-center p-2'>
-              <RandomUserAPI/>
+              <WeatherAPI/>
             </Col>
           </Row>
         </Container>
