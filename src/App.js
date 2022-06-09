@@ -6,6 +6,7 @@ import CatFactsAPI from './component/CatFactsAPI';
 import JsonPostsAPI from './component/JsonPostsAPI';
 import WeatherAPI from './component/WeatherAPI';
 import TheCatAPI from './component/TheCatAPI';
+import TwitterAPI from './component/TwitterAPI';
 
 class App extends Component {
   render(){
@@ -39,6 +40,9 @@ class App extends Component {
             </Col>
             <Col className='d-flex justify-content-center p-2'>
               <TheCatAPI/>
+            </Col>
+            <Col className='d-flex justify-content-center p-2'>
+              <TwitterAPI/>
             </Col>
           </Row>
         </Container>

@@ -8,8 +8,8 @@ export default class WeatherAPI extends Component{
         
         this.state={
             status: [],
-            error: []
-            // resMsg: []
+            error: [],
+            resMsg: []
         }
     }
 
@@ -27,8 +27,8 @@ export default class WeatherAPI extends Component{
         })
         .catch(err => {
             this.setState({
-                error: err.message + " (" + err.code + ")"
-                // resMsg: err.response.data.message
+                error: err.message + " (" + err.code + ")",
+                resMsg: err.response.data.message
             })
             console.log(err);
         });
@@ -42,8 +42,8 @@ export default class WeatherAPI extends Component{
                     <Card.Title>Weather API</Card.Title>
                     <Card.Subtitle className="mb-2 text-light fst-italic">https://goweather.herokuapp.com/weather/:city</Card.Subtitle>
                     <Card.Text>
-                        Status: {status.length === 0 ? this.state.error : this.state.status}
-                        {/* Response Message: {this.state.resMsg} */}
+                        Status: {status.length === 0 ? this.state.error : this.state.status} <br/>
+                        Response Message: {this.state.resMsg}
                     </Card.Text>
                 </Card.Body>
             </Card>
